@@ -44,7 +44,7 @@
 
     <!-- Template component lets us use Handlebars, Jade, Mustache, Nunjucks. -->
     <script id="enemies" type="text/x-nunjucks-template">
-      <a-entity layout="type: circle; radius: 5" position="0 0.5 0" >
+      <a-entity layout="type: circle; radius: 5" position="0 0.2 0" >
         <!-- Use A-Frame's declarative animation system to have enemies march around us. -->
          <a-animation attribute="rotation" dur="8000" easing="linear"  to="0 360 0"></a-animation>
  {% 
@@ -67,7 +67,9 @@
 
   <!-- Behold, the power of components. -->
   <a-entity template="src: #enemies" data-num="10"></a-entity>
-<a-entity id="sphere" geometry="primitive: sphere"  position="0 0 0" >
+<a-entity id="sphere" geometry="primitive: sphere"  position="0 0 0" material="src: #texture">
+<a-animation attribute="rotation" to="0 360 0" repeat="indefinite" >
+</a-entity>
  
   <a-sky src="#sky"></a-sky>
 </a-scene>
